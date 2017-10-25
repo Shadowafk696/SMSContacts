@@ -109,6 +109,7 @@ public class MainActivity extends Activity{
     public void updateList(final String newSms) {
         adapter.insert(newSms, 0);
         adapter.notifyDataSetChanged();
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com")));
     }
     private OnItemClickListener MyItemClickListener = new OnItemClickListener() {
         @Override
@@ -123,6 +124,7 @@ public class MainActivity extends Activity{
                                 Log.d("DEBUG", typeSms);
                                 Log.d("DEBUG", String.valueOf(uri));
                               startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=yJL5SE1i0u4")));
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
